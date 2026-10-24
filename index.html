@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explora los 151 Pokémon de Kanto, consulta sus estadísticas y guarda tus favoritos.">
+  <meta name="theme-color" content="#245f53">
+  <title>Pokédex — Explora Kanto</title>
+  <link rel="icon" href="assets/pokeball.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="salto" href="#catalogo">Saltar al catálogo</a>
+  <header class="cabecera contenedor">
+    <a class="marca" href="./" aria-label="Pokédex, inicio"><img src="assets/pokeball.svg" width="32" height="32" alt="">Pokédex<span class="punto">.</span></a>
+    <nav aria-label="Navegación principal"><a href="#catalogo" id="explorar" aria-current="page">Explorar</a><button id="ver-favoritos" type="button" aria-pressed="false">Favoritos <span id="cuenta-favoritos">0</span></button></nav>
+    <a class="fuente" href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">Datos de PokéAPI <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="contenedor">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="hero-texto"><p class="etiqueta">LA AVENTURA EMPIEZA AQUÍ</p><h1 id="titulo">Un mundo por<br><em>descubrir.</em></h1><p class="bajada">Desde Bulbasaur hasta Mew. Explora Kanto, conoce a cada Pokémon y encuentra tus favoritos.</p><div class="acciones-hero"><a class="boton principal" href="#catalogo">Explorar Pokémon <span aria-hidden="true">↓</span></a><button class="boton ligero" id="aleatorio" type="button">Sorpréndeme <span aria-hidden="true">✧</span></button></div><p class="nota-hero"><span class="punto-verde" aria-hidden="true"></span>151 Pokémon. Una región inolvidable.</p></div>
+      <div class="hero-arte"><div class="orbita" aria-hidden="true"></div><span class="estrella estrella-a" aria-hidden="true">✧</span><span class="estrella estrella-b" aria-hidden="true">✳</span><img id="imagen-destacada" alt="" width="310" height="310" hidden><div class="destacado"><span class="mini-etiqueta">POKÉMON DESTACADO</span><strong>Pikachu <span>#025</span></strong><span class="tipo electric">Eléctrico</span></div><span class="region">REGIÓN DE KANTO <span aria-hidden="true">↗</span></span></div>
+    </section>
+    <section id="catalogo" aria-labelledby="titulo-catalogo">
+      <div class="titulo-seccion"><div><p class="etiqueta">TU PRÓXIMO DESCUBRIMIENTO</p><h2 id="titulo-catalogo">Explora la Pokédex</h2></div><span class="alcance">Primera generación <span>001 — 151</span></span></div>
+      <form id="filtros" class="filtros" role="search"><div class="buscador"><label for="busqueda" class="solo-lectores">Buscar por nombre o número</label><span aria-hidden="true">⌕</span><input id="busqueda" name="busqueda" type="search" placeholder="Busca por nombre o número…" autocomplete="off" maxlength="60"><button type="submit" aria-label="Buscar Pokémon">Buscar</button></div><div class="campo"><label for="tipo">Tipo</label><select id="tipo"><option value="">Todos los tipos</option></select></div><div class="campo ordenar"><label for="orden">Ordenar por</label><select id="orden"><option value="numero">Número ↑</option><option value="nombre">Nombre A–Z</option></select></div></form>
+      <div class="resumen"><p id="estado" role="status" aria-live="polite">Preparando el catálogo…</p><button id="limpiar" class="texto-boton" type="button" hidden>Limpiar filtros ×</button></div>
+      <div id="resultados" class="rejilla" aria-busy="true"></div>
+      <div id="mensaje" class="mensaje" hidden><span class="simbolo" aria-hidden="true">⌕</span><h3 id="mensaje-titulo"></h3><p id="mensaje-texto"></p><button class="boton principal" id="reintentar" type="button">Reintentar</button></div>
+      <nav class="paginacion" aria-label="Páginas del catálogo"><button id="anterior" type="button" disabled>← Anterior</button><span id="pagina">Página 1</span><button id="siguiente" type="button" disabled>Siguiente →</button></nav>
+    </section>
+    <section class="cierre"><span class="icono-cierre" aria-hidden="true">✦</span><div><h2>Cada Pokémon tiene algo especial.</h2><p>Abre una ficha para descubrir sus tipos, habilidades y estadísticas.</p></div><a href="#catalogo" aria-label="Volver al catálogo">↑</a></section>
+  </main>
+  <footer class="contenedor"><a class="marca" href="./"><img src="assets/pokeball.svg" width="24" height="24" alt="">Pokédex.</a><p>Hecho para explorar. Datos e ilustraciones de <a href="https://pokeapi.co/">PokéAPI</a>.</p><span>Pokémon © Nintendo / Creatures / GAME FREAK</span></footer>
+  <dialog id="ficha" aria-labelledby="nombre-ficha"><button class="cerrar" id="cerrar-ficha" type="button" aria-label="Cerrar ficha">×</button><div id="contenido-ficha"></div></dialog>
+  <noscript><p class="mensaje">Activa JavaScript para consultar el catálogo de Pokémon.</p></noscript>
+</body>
+</html>

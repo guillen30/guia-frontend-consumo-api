@@ -1,0 +1,11 @@
+{
+  "name": "pokedex-kanto",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Explorador de Pokémon de Kanto con búsqueda, filtros y favoritos.",
+  "scripts": {
+    "start": "node servidor.js",
+    "test": "node --test"
+  }
+}
